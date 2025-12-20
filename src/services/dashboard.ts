@@ -3,7 +3,6 @@ import type {
   DashboardScreenData,
   Participant,
   ParticipantDataForAGivenWeek,
-  ParticipantsDataForAGivenWeek,
 } from "../types";
 import {
   forEachOverRange,

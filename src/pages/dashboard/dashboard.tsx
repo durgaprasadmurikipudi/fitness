@@ -1,9 +1,5 @@
 import { useCallback, useState, type ChangeEvent } from "react";
-import {
-  PARTICIPANT_NICK_NAMES,
-  PARTICIPANTTS_DATA,
-  TOURNAMENT_START_DATE,
-} from "../../constants";
+import { PARTICIPANT_NICK_NAMES, PARTICIPANTTS_DATA } from "../../constants";
 import {
   getHighestSteps,
   getParticipantsDataForWeek,
