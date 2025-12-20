@@ -36,6 +36,10 @@ export const Dashboard = () => {
 
   return (
     <div id="dashboard">
+      <div id="dashboard-header">
+        <h2>Welcome to Tournament: The Walking Master! 🚶🏽‍♂️‍➡️</h2>
+        <h5>Please select the week to see the stats for that week.</h5>
+      </div>
       <div id="dashboard-controls">
         <label htmlFor="weeks">
           <b>Select Week:</b>{" "}
