@@ -1,14 +1,15 @@
-import { PARTICIPANT_NICK_NAMES } from "../constants";
 import type {
   DashboardScreenData,
   Participant,
   ParticipantDataForAGivenWeek,
+  ParticipantsDataForAGivenWeek,
 } from "../types";
+import { getDefaultNickNamesOrder } from "../utils/app-utils";
 import {
   forEachOverRange,
   formatToDateString,
   getStartDateForWeekNo,
-} from "../utils";
+} from "../utils/common-utils";
 
 export function getValidWeekRange(
   particpantsData: Participant[]
@@ -33,12 +34,13 @@ function getParticipantDataForWeek(
   weekNo: number
 ): ParticipantDataForAGivenWeek {
   if (!participant) {
-    return { weekStats: {}, totalSteps: 0 };
+    return { weekStats: {}, totalSteps: 0, highestSteps: 0 };
   }
 
   const participantsDataForAWeek: ParticipantDataForAGivenWeek = {
     weekStats: {},
     totalSteps: 0,
+    highestSteps: 0,
   };
   const weekDate = getStartDateForWeekNo(weekNo);
 
@@ -49,6 +51,11 @@ function getParticipantDataForWeek(
       participant.weekStats[weekNo].steps[day];
     participantsDataForAWeek.totalSteps +=
       participant.weekStats[weekNo].steps[day];
+    participantsDataForAWeek.highestSteps =
+      participantsDataForAWeek.highestSteps >
+      participant.weekStats[weekNo].steps[day]
+        ? participantsDataForAWeek.highestSteps
+        : participant.weekStats[weekNo].steps[day];
   });
 
   return participantsDataForAWeek;
@@ -58,36 +65,55 @@ export function getParticipantsDataForWeek(
   participantsData: Participant[],
   weekNo: number
 ): DashboardScreenData {
+  const participantsDataForWeek: ParticipantsDataForAGivenWeek =
+    getDefaultNickNamesOrder().reduce((acc, participantName) => {
+      return {
+        ...acc,
+        [participantName]: getParticipantDataForWeek(
+          participantsData.find(
+            (participant) => participant.nickname === participantName
+          ),
+          weekNo
+        ),
+      };
+    }, {});
+  const highestStepsInTheWeek = getHighestStepsInThatWeek(
+    participantsDataForWeek
+  );
+
   return {
     weekNo,
-    participantsDataForWeek: PARTICIPANT_NICK_NAMES.reduce(
-      (acc, participantName) => {
-        return {
-          ...acc,
-          [participantName]: getParticipantDataForWeek(
-            participantsData.find(
-              (participant) => participant.nickname === participantName
-            ),
-            weekNo
-          ),
-        };
-      },
-      {}
-    ),
+    participantsDataForWeek,
+    highestStepsInTheWeek,
   };
 }
 
-export function getHighestSteps(dashboardData: DashboardScreenData): number {
-  let highestNumber = 0;
+export function getWinnerStepsCount(
+  dashboardData: DashboardScreenData
+): number {
+  let highestSteps = 0;
 
-  PARTICIPANT_NICK_NAMES.forEach((nickname) => {
+  getDefaultNickNamesOrder().forEach((nickname) => {
     if (
-      dashboardData.participantsDataForWeek[nickname].totalSteps > highestNumber
+      dashboardData.participantsDataForWeek[nickname].totalSteps > highestSteps
     ) {
-      highestNumber =
-        dashboardData.participantsDataForWeek[nickname].totalSteps;
+      highestSteps = dashboardData.participantsDataForWeek[nickname].totalSteps;
     }
   });
 
-  return highestNumber;
+  return highestSteps;
+}
+
+function getHighestStepsInThatWeek(
+  participantsDataForAGivenWeek: ParticipantsDataForAGivenWeek
+): number {
+  let highestSteps = 0;
+
+  getDefaultNickNamesOrder().forEach((nickname) => {
+    if (participantsDataForAGivenWeek[nickname].highestSteps > highestSteps) {
+      highestSteps = participantsDataForAGivenWeek[nickname].highestSteps;
+    }
+  });
+
+  return highestSteps;
 }

@@ -29,4 +29,5 @@ table, th, td {
 th, td {
     width: 5rem;
     padding: 0.2rem;
+    text-align: center;
 }

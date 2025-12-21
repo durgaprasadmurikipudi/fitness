@@ -1,5 +1,5 @@
 import type { Participant } from "../types";
-import { formatWeekData } from "../utils";
+import { formatWeekData } from "../utils/common-utils";
 
 export const VIJAY = "Vijay";
 export const VAMSHI = "Vamshi";
@@ -33,7 +33,10 @@ export const PARTICPANT_VK: Participant = {
       weekNo: 5,
       steps: formatWeekData(5335, 8266, 7135, 12060, 11067, 9903, 10525),
     },
-    6: { weekNo: 6, steps: formatWeekData(8393, 4012, 11995, 14487, 8393) },
+    6: {
+      weekNo: 6,
+      steps: formatWeekData(8393, 4012, 11995, 14487, 8120, 11120, 7125),
+    },
     7: { weekNo: 7, steps: formatWeekData() },
     8: { weekNo: 8, steps: formatWeekData() },
     9: { weekNo: 9, steps: formatWeekData() },
@@ -62,7 +65,10 @@ export const PARTICPANT_VJ: Participant = {
       steps: [5468, 4829, 4647, 4893, 5007, 4618, 3300],
     },
     5: { weekNo: 5, steps: formatWeekData() },
-    6: { weekNo: 6, steps: formatWeekData() },
+    6: {
+      weekNo: 6,
+      steps: formatWeekData(3551, 4970, 4624, 6423, 4553, 4816, 5488),
+    },
     7: { weekNo: 7, steps: formatWeekData() },
     8: { weekNo: 8, steps: formatWeekData() },
     9: { weekNo: 9, steps: formatWeekData() },
@@ -123,7 +129,10 @@ export const PARTICPANT_MAK: Participant = {
       weekNo: 5,
       steps: formatWeekData(17164, 8550, 9292, 8517, 10111, 11868, 14044),
     },
-    6: { weekNo: 6, steps: formatWeekData(9195, 8591, 12019, 13191) },
+    6: {
+      weekNo: 6,
+      steps: formatWeekData(9195, 8591, 12019, 13191, 7130, 7305, 7006),
+    },
     7: { weekNo: 7, steps: formatWeekData() },
     8: { weekNo: 8, steps: formatWeekData() },
     9: { weekNo: 9, steps: formatWeekData() },
