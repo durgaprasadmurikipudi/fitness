@@ -1,0 +1,16 @@
+
+#participants-table {
+    margin-top: 1rem;
+    padding: 0.2rem;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    width: 100%;
+}
+
+th, td {
+    width: 5rem;
+    padding: 0.5rem;
+    text-align: center;
+}

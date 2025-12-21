@@ -1,10 +1,10 @@
 import "./App.css";
-import { Dashboard } from "./pages/dashboard/dashboard";
+import { IndexPage } from "./pages/ContainerPage";
 
 function App() {
   return (
     <div className="app">
-      <Dashboard />
+      <IndexPage />
     </div>
   );
 }

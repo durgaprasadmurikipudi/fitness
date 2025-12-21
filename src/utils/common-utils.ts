@@ -63,3 +63,12 @@ export function getEndDateForWeekNo(weekNo: number): Date {
 export function formatToDateString(date: Date) {
   return date.toISOString().split("T")[0];
 }
+
+export function formatDateToHumanReadable(date: Date) {
+  return date.toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}

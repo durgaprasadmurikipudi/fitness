@@ -6,6 +6,7 @@ import {
 } from "../../services/dashboard";
 import "./dashboard.css";
 import {
+  formatDateToHumanReadable,
   getEndDateForWeekNo,
   getStartDateForWeekNo,
   mapOverRange,
@@ -33,10 +34,6 @@ export const Dashboard = () => {
 
   return (
     <div id="dashboard">
-      <div id="dashboard-header">
-        <h2>Welcome to Tournament: The Walking Master! 🚶🏽‍♂️‍➡️</h2>
-        <h5>Please select the week to see the stats for that week.</h5>
-      </div>
       <div id="dashboard-controls">
         <label htmlFor="weeks">
           <b>Select Week:</b>{" "}
@@ -53,11 +50,10 @@ export const Dashboard = () => {
           ))}
         </select>
       </div>
-      <div id="dashboard-data">
-        <h3>Week No - {dashboardScreenData.weekNo}: </h3>
+      <div id="dashboard-table-container">
         <span>
-          Starts from: <b> {weekStartDate.toDateString()}</b> - Ends on :{" "}
-          <b>{weekEndDate.toDateString()}</b>
+          <b> {formatDateToHumanReadable(weekStartDate)}</b> to{" "}
+          <b>{formatDateToHumanReadable(weekEndDate)}</b>
         </span>
         <DashboardTable
           dashboardScreenData={dashboardScreenData}

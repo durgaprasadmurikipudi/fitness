@@ -1,0 +1,9 @@
+#header {
+    color: black;
+}
+
+#component-container {
+    border: 1px solid orange;
+    background-color: #f6e2ce;
+    color: black;
+}

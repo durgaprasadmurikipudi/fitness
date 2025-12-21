@@ -7,6 +7,7 @@ import {
   StepsRows,
   TotalStepsRow,
 } from "./dashboard-table-util-components";
+import "./dashboard-table.css";
 
 export const DashboardTable = (props: DashboardTableProps) => {
   const { weekStartDate, dashboardScreenData } = props;
