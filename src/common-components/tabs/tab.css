@@ -1,6 +1,5 @@
 #tab {
-    padding: 0.2rem;
-    margin-right: 1rem;
+    padding: 0.4rem;
 }
 
 #tab.selected-tab {
@@ -9,4 +8,11 @@
     background-color: orange;
     border-bottom: 0;
     font-weight: bold;
+}
+
+#tab.not-selected {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-right: 1px solid black;
 }

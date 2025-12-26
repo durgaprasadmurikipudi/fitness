@@ -1,64 +1,32 @@
-import { useCallback, useState, type ChangeEvent } from "react";
-import { PARTICIPANTTS_DATA } from "../../constants";
+import { DashboardTableViewMode } from "./dashboard-table-view-mode";
+import { Tabs } from "../../common-components/tabs/tabs";
 import {
-  getParticipantsDataForWeek,
-  getValidWeekRange,
-} from "../../services/dashboard";
+  DashboardTableViewModeTab,
+  tabs,
+} from "../../constants/dashboard-page";
+import { useState } from "react";
+import type { ITab } from "../../types/container-page";
 import "./dashboard.css";
-import {
-  formatDateToHumanReadable,
-  getEndDateForWeekNo,
-  getStartDateForWeekNo,
-  mapOverRange,
-} from "../../utils/common-utils";
-import { DashboardTable } from "./dashboard-table";
-
-const [startWeekNo, endWeekNo] = getValidWeekRange(PARTICIPANTTS_DATA);
+import { DashboardPageContext } from "../../context/dashboard-page/dashboard-page-context";
 
 export const Dashboard = () => {
-  const [selectedWeek, setSelectedWeek] = useState(startWeekNo);
-  const weekStartDate = getStartDateForWeekNo(selectedWeek);
-  const weekEndDate = getEndDateForWeekNo(selectedWeek);
-
-  const dashboardScreenData = getParticipantsDataForWeek(
-    PARTICIPANTTS_DATA,
-    selectedWeek
-  );
-
-  const handleSelectedWeek = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>) => {
-      setSelectedWeek(Number(e.target.value));
-    },
-    []
+  const [selectedTab, setSelectedTab] = useState<ITab>(
+    DashboardTableViewModeTab
   );
 
   return (
     <div id="dashboard">
-      <div id="dashboard-controls">
-        <label htmlFor="weeks">
-          <b>Select Week:</b>{" "}
-        </label>
-        <select id="weeks-selection" onChange={handleSelectedWeek}>
-          {mapOverRange(startWeekNo, endWeekNo, (optionVal) => (
-            <option
-              key={optionVal}
-              value={optionVal}
-              selected={selectedWeek === optionVal}
-            >
-              Week - {optionVal}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div id="dashboard-table-container">
-        <span>
-          <b> {formatDateToHumanReadable(weekStartDate)}</b> to{" "}
-          <b>{formatDateToHumanReadable(weekEndDate)}</b>
-        </span>
-        <DashboardTable
-          dashboardScreenData={dashboardScreenData}
-          weekStartDate={weekStartDate}
-        />
+      <Tabs
+        tabs={tabs}
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+      />
+      <div id="dashboard-container">
+        <DashboardPageContext>
+          {selectedTab === DashboardTableViewModeTab && (
+            <DashboardTableViewMode />
+          )}
+        </DashboardPageContext>
       </div>
     </div>
   );

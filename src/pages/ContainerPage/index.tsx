@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Tabs } from "../../common-components/tabs/tabs";
 import { DASHBOARD_TAB, tabs } from "../../constants/container-page";
 import "./index.css";
-import type { Tab } from "../../types/container-page";
+import type { ITab } from "../../types/container-page";
 
 export const IndexPage = () => {
-  const [tab, selectedTab] = useState<Tab>(DASHBOARD_TAB);
+  const [tab, selectedTab] = useState<ITab>(DASHBOARD_TAB);
   const Component = tab.component;
 
   return (

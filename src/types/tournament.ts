@@ -1,14 +1,14 @@
-export interface WeekStats {
+export interface IWeekStats {
   weekNo: number;
   steps: [number, number, number, number, number, number, number];
 }
 
-export interface Participant {
+export interface IParticipant {
   name: string;
   nickname: string;
-  weekStats: { [weekNo: number]: WeekStats };
+  weekStats: { [weekNo: number]: IWeekStats };
 }
 
-export interface TournamentDetails {
+export interface ITournamentDetails {
   tournamentStartDate: Date;
 }

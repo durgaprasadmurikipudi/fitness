@@ -1,14 +1,14 @@
 import type {
-  AverageStepsRowProps,
-  HighestStepsRowProps,
-  HighlightedTableCellProps,
-  StepsRowsProps,
-  TotalStepsRowProps,
+  IAverageStepsRowProps,
+  IHighestStepsRowProps,
+  IHighlightedTableCellProps,
+  IStepsRowsProps,
+  ITotalStepsRowProps,
 } from "../../types";
 import { formatToDateString, mapOverRange } from "../../utils";
 import { getDefaultNickNamesOrder } from "../../utils/app-utils";
 
-export const StepsRows = (props: StepsRowsProps) => {
+export const StepsRows = (props: IStepsRowsProps) => {
   const { weekStartDate, dashboardScreenData } = props;
 
   return (
@@ -40,7 +40,7 @@ export const StepsRows = (props: StepsRowsProps) => {
   );
 };
 
-export const TotalStepsRow = (props: TotalStepsRowProps) => {
+export const TotalStepsRow = (props: ITotalStepsRowProps) => {
   const { dashboardScreenData, winnerStepsCount } = props;
 
   return (
@@ -64,7 +64,7 @@ export const TotalStepsRow = (props: TotalStepsRowProps) => {
   );
 };
 
-export const AverageStepsRow = (props: AverageStepsRowProps) => {
+export const AverageStepsRow = (props: IAverageStepsRowProps) => {
   const { dashboardScreenData } = props;
 
   return (
@@ -83,7 +83,7 @@ export const AverageStepsRow = (props: AverageStepsRowProps) => {
   );
 };
 
-export const HighestStepsRow = (props: HighestStepsRowProps) => {
+export const HighestStepsRow = (props: IHighestStepsRowProps) => {
   const { dashboardScreenData, highestStepsForThatWeek } = props;
 
   return (
@@ -108,7 +108,7 @@ export const HighestStepsRow = (props: HighestStepsRowProps) => {
   );
 };
 
-const HighlightTableCell = (props: HighlightedTableCellProps) => {
+const HighlightTableCell = (props: IHighlightedTableCellProps) => {
   const { nickname, index, data, shouldHightlight } = props;
   return (
     <td

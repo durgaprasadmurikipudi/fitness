@@ -1,5 +1,5 @@
 import { getWinnerStepsCount } from "../../services/dashboard";
-import type { DashboardTableProps } from "../../types";
+import type { IDashboardTableProps } from "../../types";
 import { getDefaultNickNamesOrder } from "../../utils/app-utils";
 import {
   AverageStepsRow,
@@ -9,7 +9,7 @@ import {
 } from "./dashboard-table-util-components";
 import "./dashboard-table.css";
 
-export const DashboardTable = (props: DashboardTableProps) => {
+export const DashboardTable = (props: IDashboardTableProps) => {
   const { weekStartDate, dashboardScreenData } = props;
   const winnerStepsCount = getWinnerStepsCount(dashboardScreenData);
   const highestStepsForThatWeek = dashboardScreenData.highestStepsInTheWeek;

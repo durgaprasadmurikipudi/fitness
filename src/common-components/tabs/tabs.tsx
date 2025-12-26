@@ -1,14 +1,14 @@
-import type { Tab } from "../../types/container-page";
+import type { ITab } from "../../types/container-page";
 import { TabComponent } from "./tab";
 import "./tabs.css";
 
-interface Props {
-  tabs: Tab[];
-  selectedTab: Tab;
-  setSelectedTab: (tab: Tab) => void;
+interface IProps {
+  tabs: ITab[];
+  selectedTab: ITab;
+  setSelectedTab: (tab: ITab) => void;
 }
 
-export const Tabs = (props: Props) => {
+export const Tabs = (props: IProps) => {
   return (
     <div id="tabs">
       {props.tabs.map((tab) => (

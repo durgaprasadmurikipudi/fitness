@@ -1,8 +1,8 @@
 import type {
-  DashboardScreenData,
-  Participant,
-  ParticipantDataForAGivenWeek,
-  ParticipantsDataForAGivenWeek,
+  IDashboardScreenData,
+  IParticipant,
+  IParticipantDataForAGivenWeek,
+  IParticipantsDataForAGivenWeek,
 } from "../types";
 import { getDefaultNickNamesOrder } from "../utils/app-utils";
 import {
@@ -12,7 +12,7 @@ import {
 } from "../utils/common-utils";
 
 export function getValidWeekRange(
-  particpantsData: Participant[]
+  particpantsData: IParticipant[]
 ): [number, number] {
   let start = Number.POSITIVE_INFINITY,
     end = Number.NEGATIVE_INFINITY;
@@ -30,14 +30,14 @@ export function getValidWeekRange(
 }
 
 function getParticipantDataForWeek(
-  participant: Participant | undefined,
+  participant: IParticipant | undefined,
   weekNo: number
-): ParticipantDataForAGivenWeek {
+): IParticipantDataForAGivenWeek {
   if (!participant) {
     return { weekStats: {}, totalSteps: 0, highestSteps: 0 };
   }
 
-  const participantsDataForAWeek: ParticipantDataForAGivenWeek = {
+  const participantsDataForAWeek: IParticipantDataForAGivenWeek = {
     weekStats: {},
     totalSteps: 0,
     highestSteps: 0,
@@ -62,10 +62,10 @@ function getParticipantDataForWeek(
 }
 
 export function getParticipantsDataForWeek(
-  participantsData: Participant[],
+  participantsData: IParticipant[],
   weekNo: number
-): DashboardScreenData {
-  const participantsDataForWeek: ParticipantsDataForAGivenWeek =
+): IDashboardScreenData {
+  const participantsDataForWeek: IParticipantsDataForAGivenWeek =
     getDefaultNickNamesOrder().reduce((acc, participantName) => {
       return {
         ...acc,
@@ -89,7 +89,7 @@ export function getParticipantsDataForWeek(
 }
 
 export function getWinnerStepsCount(
-  dashboardData: DashboardScreenData
+  dashboardData: IDashboardScreenData
 ): number {
   let highestSteps = 0;
 
@@ -105,7 +105,7 @@ export function getWinnerStepsCount(
 }
 
 function getHighestStepsInThatWeek(
-  participantsDataForAGivenWeek: ParticipantsDataForAGivenWeek
+  participantsDataForAGivenWeek: IParticipantsDataForAGivenWeek
 ): number {
   let highestSteps = 0;
 

@@ -1,4 +1,4 @@
-export interface ParticipantDataForAGivenWeek {
+export interface IParticipantDataForAGivenWeek {
   weekStats: {
     [dateOnThatDay: string]: number;
   };
@@ -6,43 +6,43 @@ export interface ParticipantDataForAGivenWeek {
   highestSteps: number;
 }
 
-export interface ParticipantsDataForAGivenWeek {
-  [participantName: string]: ParticipantDataForAGivenWeek;
+export interface IParticipantsDataForAGivenWeek {
+  [participantName: string]: IParticipantDataForAGivenWeek;
 }
 
-export interface DashboardScreenData {
+export interface IDashboardScreenData {
   weekNo: number;
-  participantsDataForWeek: ParticipantsDataForAGivenWeek;
+  participantsDataForWeek: IParticipantsDataForAGivenWeek;
   highestStepsInTheWeek: number;
 }
 
-export interface DashboardTableProps {
+export interface IDashboardTableProps {
   weekStartDate: Date;
-  dashboardScreenData: DashboardScreenData;
+  dashboardScreenData: IDashboardScreenData;
 }
 
-export interface HighlightedTableCellProps {
+export interface IHighlightedTableCellProps {
   nickname: string;
   index: number;
   shouldHightlight: boolean;
   data: string;
 }
 
-export interface TotalStepsRowProps {
-  dashboardScreenData: DashboardScreenData;
+export interface ITotalStepsRowProps {
+  dashboardScreenData: IDashboardScreenData;
   winnerStepsCount: number;
 }
 
-export interface AverageStepsRowProps {
-  dashboardScreenData: DashboardScreenData;
+export interface IAverageStepsRowProps {
+  dashboardScreenData: IDashboardScreenData;
 }
 
-export interface HighestStepsRowProps {
-  dashboardScreenData: DashboardScreenData;
+export interface IHighestStepsRowProps {
+  dashboardScreenData: IDashboardScreenData;
   highestStepsForThatWeek: number;
 }
 
-export interface StepsRowsProps {
-  dashboardScreenData: DashboardScreenData;
+export interface IStepsRowsProps {
+  dashboardScreenData: IDashboardScreenData;
   weekStartDate: Date;
 }
