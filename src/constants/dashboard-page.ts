@@ -3,12 +3,12 @@ import { DashboardTableViewMode } from "../pages/Dashboard/dashboard-table-view-
 import type { ITab } from "../types/container-page";
 
 export const DashboardTableViewModeTab = {
-  name: "Table View - Details Mode",
+  name: "Details Mode",
   component: DashboardTableViewMode,
 };
 
 export const DashboardChartViewModeTab = {
-  name: "Chart View - Summary Mode",
+  name: "Summary Mode",
   component: DashboardChartViewMode,
 };
 

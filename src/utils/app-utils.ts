@@ -67,13 +67,13 @@ export function getHighestWeeklyAwardWinner(
   });
 
   if (highestAwardWinners.length === 1) {
-    return `Highest times Weekly award won so far is held by: ${highestAwardWinners[0]} by winning it ${highestAwardsCount} times.`;
+    return `"Highest times - Weekly Award Winner" record now being held by: ${highestAwardWinners[0]} by winning it ${highestAwardsCount} times as per the latest data.`;
   }
 
   if (highestAwardWinners.length > 1) {
-    return `Highest times Weekly award won so far record is shared jointly by: ${highestAwardWinners.join(
+    return `"Highest times - Weekly Award Winner" record now is being shared jointly by: ${highestAwardWinners.join(
       ", "
-    )} with each winning it for ${highestAwardsCount} times.`;
+    )} by winning it for ${highestAwardsCount} times respectively as per the latest data.`;
   }
 
   return "";
