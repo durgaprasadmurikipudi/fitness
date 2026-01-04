@@ -1,6 +1,6 @@
 import { getWinnerStepsCount } from "../../services/dashboard";
 import type { IDashboardTableProps } from "../../types";
-import { getDefaultNickNamesOrder } from "../../utils/app-utils";
+import { getDefaultNickNames } from "../../utils/app-utils";
 import {
   AverageStepsRow,
   HighestStepsRow,
@@ -20,7 +20,7 @@ export const DashboardTable = (props: IDashboardTableProps) => {
         <thead>
           <tr>
             <th></th>
-            {getDefaultNickNamesOrder().map((name) => (
+            {getDefaultNickNames().map((name) => (
               <th key={name}>{name}</th>
             ))}
           </tr>

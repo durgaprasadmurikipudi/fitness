@@ -1,10 +1,13 @@
 import {
   createContext,
   useCallback,
+  useContext,
   useMemo,
   useState,
   type ChangeEvent,
+  type Dispatch,
   type ReactNode,
+  type SetStateAction,
 } from "react";
 import type { IDashboardScreenData } from "../../types";
 import { getParticipantsDataForWeek } from "../../services/dashboard";
@@ -19,6 +22,7 @@ interface IDashboardPageContext {
   weekEndDate: Date;
   dashboardScreenData: IDashboardScreenData;
   handleSelectedWeek: (e: ChangeEvent<HTMLSelectElement>) => void;
+  setSelectedWeek: Dispatch<SetStateAction<number>>;
 }
 
 const dashboardScreenData = getParticipantsDataForWeek(PARTICIPANTTS_DATA, 1);
@@ -31,6 +35,7 @@ const defaultIDashboardPageContext: IDashboardPageContext = {
   weekEndDate: new Date(),
   dashboardScreenData,
   handleSelectedWeek: () => {},
+  setSelectedWeek: () => {},
 };
 
 export const DashboardContext = createContext<IDashboardPageContext>(
@@ -62,6 +67,7 @@ export const DashboardPageContext = (props: IProps) => {
         selectedWeek
       ),
       handleSelectedWeek,
+      setSelectedWeek,
     };
   }, [selectedWeek]);
 
@@ -70,4 +76,16 @@ export const DashboardPageContext = (props: IProps) => {
       {children}
     </DashboardContext.Provider>
   );
+};
+
+export const useDashboardPageContext = () => {
+  const context = useContext(DashboardContext);
+
+  if (!context) {
+    throw new Error(
+      "useDashboardPageContext must be used within DashboardPageContext"
+    );
+  }
+
+  return context;
 };

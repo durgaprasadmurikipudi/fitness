@@ -1,4 +1,5 @@
 import { TOURNAMENT_START_DATE } from "../constants";
+import { MILLI_SECONDS_PER_DAY } from "../constants/common";
 
 export function mapOverRange<T>(
   start: number,
@@ -71,4 +72,20 @@ export function formatDateToHumanReadable(date: Date) {
     month: "long",
     day: "numeric",
   });
+}
+
+function getDaysBetween2Dates(date1: Date, date2: Date): number {
+  date1.setHours(0, 0, 0, 0);
+  date2.setHours(0, 0, 0, 0);
+
+  const milliSecondsElapsed = Math.abs(date2.getTime() - date1.getTime());
+  const days = Math.round(milliSecondsElapsed / MILLI_SECONDS_PER_DAY);
+
+  return days;
+}
+
+export function getCurrentWeek(): number {
+  const daysDiff = getDaysBetween2Dates(TOURNAMENT_START_DATE, new Date());
+
+  return Math.floor(daysDiff / 7) + 1;
 }

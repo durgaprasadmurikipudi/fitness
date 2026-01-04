@@ -6,7 +6,7 @@ import type {
   ITotalStepsRowProps,
 } from "../../types";
 import { formatToDateString, mapOverRange } from "../../utils";
-import { getDefaultNickNamesOrder } from "../../utils/app-utils";
+import { getDefaultNickNames } from "../../utils/app-utils";
 
 export const StepsRows = (props: IStepsRowsProps) => {
   const { weekStartDate, dashboardScreenData } = props;
@@ -23,7 +23,7 @@ export const StepsRows = (props: IStepsRowsProps) => {
         return (
           <tr key={day}>
             <td>{crntWeekDate}</td>
-            {getDefaultNickNamesOrder().map((nickName, i) => {
+            {getDefaultNickNames().map((nickName, i) => {
               return (
                 <td key={crntWeekDate + nickName + i}>
                   {
@@ -45,7 +45,7 @@ export const TotalStepsRow = (props: ITotalStepsRowProps) => {
 
   return (
     <>
-      {getDefaultNickNamesOrder().map((nickName, i) => {
+      {getDefaultNickNames().map((nickName, i) => {
         const totalSteps =
           dashboardScreenData.participantsDataForWeek[nickName].totalSteps;
         const isWinnerStepsCount =
@@ -69,7 +69,7 @@ export const AverageStepsRow = (props: IAverageStepsRowProps) => {
 
   return (
     <>
-      {getDefaultNickNamesOrder().map((nickName, i) => {
+      {getDefaultNickNames().map((nickName, i) => {
         const totalSteps =
           dashboardScreenData.participantsDataForWeek[nickName].totalSteps;
 
@@ -88,7 +88,7 @@ export const HighestStepsRow = (props: IHighestStepsRowProps) => {
 
   return (
     <>
-      {getDefaultNickNamesOrder().map((nickName, i) => {
+      {getDefaultNickNames().map((nickName, i) => {
         const participantHighestStepsForTheWeek =
           dashboardScreenData.participantsDataForWeek[nickName].highestSteps;
         const ishighestStepsCountWinner =
