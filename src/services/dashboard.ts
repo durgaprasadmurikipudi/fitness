@@ -4,7 +4,7 @@ import type {
   IParticipantDataForAGivenWeek,
   IParticipantsDataForAGivenWeek,
 } from "../types";
-import { getDefaultNickNamesOrder } from "../utils/app-utils";
+import { getDefaultNickNames } from "../utils/app-utils";
 import {
   forEachOverRange,
   formatToDateString,
@@ -66,7 +66,7 @@ export function getParticipantsDataForWeek(
   weekNo: number
 ): IDashboardScreenData {
   const participantsDataForWeek: IParticipantsDataForAGivenWeek =
-    getDefaultNickNamesOrder().reduce((acc, participantName) => {
+    getDefaultNickNames().reduce((acc, participantName) => {
       return {
         ...acc,
         [participantName]: getParticipantDataForWeek(
@@ -93,7 +93,7 @@ export function getWinnerStepsCount(
 ): number {
   let highestSteps = 0;
 
-  getDefaultNickNamesOrder().forEach((nickname) => {
+  getDefaultNickNames().forEach((nickname) => {
     if (
       dashboardData.participantsDataForWeek[nickname].totalSteps > highestSteps
     ) {
@@ -109,7 +109,7 @@ function getHighestStepsInThatWeek(
 ): number {
   let highestSteps = 0;
 
-  getDefaultNickNamesOrder().forEach((nickname) => {
+  getDefaultNickNames().forEach((nickname) => {
     if (participantsDataForAGivenWeek[nickname].highestSteps > highestSteps) {
       highestSteps = participantsDataForAGivenWeek[nickname].highestSteps;
     }

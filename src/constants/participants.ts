@@ -6,12 +6,14 @@ export const VAMSHI = "Vamshi";
 export const AASHIQ = "Aashiq";
 export const ARUN = "Arun";
 export const DURGA = "Durga";
+export const SHIVA = "Shiva";
 
 export const VJ = "VJ";
 export const VK = "VK";
 export const ASH = "ASH";
 export const MAK = "MAK";
 export const DP = "DP";
+export const SRK = "SRK";
 
 export const PARTICPANT_VK: IParticipant = {
   name: VAMSHI,
@@ -41,8 +43,14 @@ export const PARTICPANT_VK: IParticipant = {
       weekNo: 6,
       steps: formatWeekData(8393, 4012, 11995, 14487, 8120, 11120, 7125),
     },
-    7: { weekNo: 7, steps: formatWeekData(9250, 5420, 9675, 6615) },
-    8: { weekNo: 8, steps: formatWeekData() },
+    7: {
+      weekNo: 7,
+      steps: formatWeekData(9250, 5420, 9675, 6615, 4510, 5367, 8398),
+    },
+    8: {
+      weekNo: 8,
+      steps: formatWeekData(7148, 11853, 5250, 6868, 9794, 5211, 9506),
+    },
     9: { weekNo: 9, steps: formatWeekData() },
     10: { weekNo: 10, steps: formatWeekData() },
     11: { weekNo: 11, steps: formatWeekData() },
@@ -74,7 +82,10 @@ export const PARTICPANT_VJ: IParticipant = {
       weekNo: 6,
       steps: formatWeekData(3551, 4970, 4624, 6423, 4553, 4816, 5488),
     },
-    7: { weekNo: 7, steps: formatWeekData() },
+    7: {
+      weekNo: 7,
+      steps: formatWeekData(4327, 3191, 6458, 6668, 1472, 4667, 4106),
+    },
     8: { weekNo: 8, steps: formatWeekData() },
     9: { weekNo: 9, steps: formatWeekData() },
     10: { weekNo: 10, steps: formatWeekData() },
@@ -104,8 +115,14 @@ export const PARTICPANT_ASH: IParticipant = {
     },
     5: { weekNo: 5, steps: formatWeekData(6951, 8224) },
     6: { weekNo: 6, steps: formatWeekData() },
-    7: { weekNo: 7, steps: formatWeekData(9048, 5992, 7467, 6397) },
-    8: { weekNo: 8, steps: formatWeekData() },
+    7: {
+      weekNo: 7,
+      steps: formatWeekData(9048, 5992, 7467, 6397, 8940, 11998, 7838),
+    },
+    8: {
+      weekNo: 8,
+      steps: formatWeekData(5542, 4028, 7244, 7019, 2366, 5126, 11838),
+    },
     9: { weekNo: 9, steps: formatWeekData() },
     10: { weekNo: 10, steps: formatWeekData() },
     11: { weekNo: 11, steps: formatWeekData() },
@@ -140,8 +157,14 @@ export const PARTICPANT_MAK: IParticipant = {
       weekNo: 6,
       steps: formatWeekData(9195, 8591, 12019, 13191, 7130, 7305, 7006),
     },
-    7: { weekNo: 7, steps: formatWeekData(6422, 11414, 9049, 7325) },
-    8: { weekNo: 8, steps: formatWeekData() },
+    7: {
+      weekNo: 7,
+      steps: formatWeekData(6422, 11414, 9049, 7325, 10859, 6265, 7651),
+    },
+    8: {
+      weekNo: 8,
+      steps: formatWeekData(7328, 8435, 10383, 6376, 7662, 6789, 6788),
+    },
     9: { weekNo: 9, steps: formatWeekData() },
     10: { weekNo: 10, steps: formatWeekData() },
     11: { weekNo: 11, steps: formatWeekData() },
@@ -181,9 +204,57 @@ export const PARTICPANT_DP: IParticipant = {
     },
     7: {
       weekNo: 7,
-      steps: formatWeekData(3739, 9434, 12368, 11016, 9015, 11425),
+      steps: formatWeekData(3739, 9434, 12368, 11016, 9015, 11425, 6780),
     },
-    8: { weekNo: 8, steps: formatWeekData() },
+    8: {
+      weekNo: 8,
+      steps: formatWeekData(5272, 7297, 6510, 11838, 13247, 5814, 4209),
+    },
+    9: { weekNo: 9, steps: formatWeekData() },
+    10: { weekNo: 10, steps: formatWeekData() },
+    11: { weekNo: 11, steps: formatWeekData() },
+    12: { weekNo: 12, steps: formatWeekData() },
+    13: { weekNo: 13, steps: formatWeekData() },
+    14: { weekNo: 14, steps: formatWeekData() },
+  },
+};
+
+export const PARTICPANT_SRK: IParticipant = {
+  name: SHIVA,
+  nickname: SRK,
+  weekStats: {
+    1: {
+      weekNo: 1,
+      steps: formatWeekData(),
+    },
+    2: {
+      weekNo: 2,
+      steps: formatWeekData(),
+    },
+    3: {
+      weekNo: 3,
+      steps: formatWeekData(),
+    },
+    4: {
+      weekNo: 4,
+      steps: formatWeekData(),
+    },
+    5: {
+      weekNo: 5,
+      steps: formatWeekData(),
+    },
+    6: {
+      weekNo: 6,
+      steps: formatWeekData(),
+    },
+    7: {
+      weekNo: 7,
+      steps: formatWeekData(),
+    },
+    8: {
+      weekNo: 8,
+      steps: formatWeekData(13490, 12894, 13260, 13240, 18173, 13249, 11713),
+    },
     9: { weekNo: 9, steps: formatWeekData() },
     10: { weekNo: 10, steps: formatWeekData() },
     11: { weekNo: 11, steps: formatWeekData() },
@@ -199,6 +270,7 @@ export const PARTICIPANTTS_DATA: IParticipant[] = [
   PARTICPANT_MAK,
   PARTICPANT_VJ,
   PARTICPANT_VK,
+  PARTICPANT_SRK,
 ];
 
-export const PARTICIPANT_NICK_NAMES = [VK, DP, ASH, VJ, MAK];
+export const PARTICIPANT_NICK_NAMES = [VK, DP, ASH, VJ, MAK, SRK];

@@ -3,7 +3,7 @@ import { getDefaultLeaderDashboardWeekMetric } from "../constants/leader-dashboa
 import type { IParticipant } from "../types";
 import type { ILeaderDashboardPage } from "../types/leader-dashboard-page";
 
-export function getDefaultNickNamesOrder(): string[] {
+export function getDefaultNickNames(): string[] {
   return PARTICIPANT_NICK_NAMES;
 }
 
