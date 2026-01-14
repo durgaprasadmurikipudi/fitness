@@ -10,9 +10,9 @@ export const IndexPage = () => {
 
   return (
     <div id="header">
-      <h2 className="mt-[1rem] mb-[1rem] pb-1 border-b-[1px] border-solid border-black font-bold">
+      <h1 className="mt-[1rem] mb-[1rem] pb-1 border-b-[1px] border-solid border-black font-bold text-3xl">
         Welcome to Tournament: The Walking Master! 🚶🏽‍♂️‍➡️
-      </h2>
+      </h1>
       <Tabs tabs={tabs} selectedTab={tab} setSelectedTab={selectedTab} />
       <div id="component-container">
         <Component />
