@@ -18,6 +18,7 @@ export const SRK = "SRK";
 export const PARTICPANT_VK: IParticipant = {
   name: VAMSHI,
   nickname: VK,
+  colorCode: "rgb(232, 61, 144)",
   weekStats: {
     1: {
       weekNo: 1,
@@ -69,6 +70,7 @@ export const PARTICPANT_VK: IParticipant = {
 export const PARTICPANT_VJ: IParticipant = {
   name: VIJAY,
   nickname: VJ,
+  colorCode: "rgb(61, 144, 232)",
   weekStats: {
     1: { weekNo: 1, steps: formatWeekData(0, 0, 0, 4738) },
     2: {
@@ -105,6 +107,7 @@ export const PARTICPANT_VJ: IParticipant = {
 export const PARTICPANT_ASH: IParticipant = {
   name: AASHIQ,
   nickname: ASH,
+  colorCode: "rgb(144, 61, 232)",
   weekStats: {
     1: { weekNo: 1, steps: formatWeekData(0, 0, 2502, 2522, 0, 0, 8797) },
     2: {
@@ -147,6 +150,7 @@ export const PARTICPANT_ASH: IParticipant = {
 export const PARTICPANT_MAK: IParticipant = {
   name: ARUN,
   nickname: MAK,
+  colorCode: "rgb(144, 232, 61)",
   weekStats: {
     1: { weekNo: 1, steps: formatWeekData() },
     2: {
@@ -195,6 +199,7 @@ export const PARTICPANT_MAK: IParticipant = {
 export const PARTICPANT_DP: IParticipant = {
   name: DURGA,
   nickname: DP,
+  colorCode: "rgb(255, 165, 0)",
   weekStats: {
     1: {
       weekNo: 1,
@@ -236,7 +241,10 @@ export const PARTICPANT_DP: IParticipant = {
       weekNo: 10,
       steps: formatWeekData(13948, 5008, 18204, 7176, 18082, 15955, 11027),
     },
-    11: { weekNo: 11, steps: formatWeekData() },
+    11: {
+      weekNo: 11,
+      steps: formatWeekData(7428, 14302, 16077, 9634, 4283, 8491, 11977),
+    },
     12: { weekNo: 12, steps: formatWeekData() },
     13: { weekNo: 13, steps: formatWeekData() },
     14: { weekNo: 14, steps: formatWeekData() },
@@ -246,6 +254,7 @@ export const PARTICPANT_DP: IParticipant = {
 export const PARTICPANT_SRK: IParticipant = {
   name: SHIVA,
   nickname: SRK,
+  colorCode: "yellow",
   weekStats: {
     1: {
       weekNo: 1,
@@ -288,7 +297,7 @@ export const PARTICPANT_SRK: IParticipant = {
   },
 };
 
-export const PARTICIPANTTS_DATA: IParticipant[] = [
+export const PARTICIPANTS_DATA: IParticipant[] = [
   PARTICPANT_ASH,
   PARTICPANT_DP,
   PARTICPANT_MAK,

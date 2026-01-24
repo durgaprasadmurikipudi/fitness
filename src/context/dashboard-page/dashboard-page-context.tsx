@@ -11,7 +11,7 @@ import {
 } from "react";
 import type { IDashboardScreenData } from "../../types";
 import { getParticipantsDataForWeek } from "../../services/dashboard";
-import { PARTICIPANTTS_DATA } from "../../constants";
+import { PARTICIPANTS_DATA } from "../../constants";
 import { getEndDateForWeekNo, getStartDateForWeekNo } from "../../utils";
 
 interface IDashboardPageContext {
@@ -25,7 +25,7 @@ interface IDashboardPageContext {
   setSelectedWeek: Dispatch<SetStateAction<number>>;
 }
 
-const dashboardScreenData = getParticipantsDataForWeek(PARTICIPANTTS_DATA, 1);
+const dashboardScreenData = getParticipantsDataForWeek(PARTICIPANTS_DATA, 1);
 
 const defaultIDashboardPageContext: IDashboardPageContext = {
   startWeekNo: 1,
@@ -63,7 +63,7 @@ export const DashboardPageContext = (props: IProps) => {
       weekStartDate: getStartDateForWeekNo(selectedWeek),
       weekEndDate: getEndDateForWeekNo(selectedWeek),
       dashboardScreenData: getParticipantsDataForWeek(
-        PARTICIPANTTS_DATA,
+        PARTICIPANTS_DATA,
         selectedWeek
       ),
       handleSelectedWeek,

@@ -1,6 +1,7 @@
-import { PARTICIPANT_NICK_NAMES, PARTICIPANTTS_DATA } from "../constants";
+import { PARTICIPANT_NICK_NAMES, PARTICIPANTS_DATA } from "../constants";
 import { getDefaultLeaderDashboardWeekMetric } from "../constants/leader-dashboard-page";
 import type { IParticipant } from "../types";
+import type { LineChartDataset } from "../types/common-components/chart";
 import type { ILeaderDashboardPage } from "../types/leader-dashboard-page";
 
 export function getDefaultNickNames(): string[] {
@@ -8,7 +9,7 @@ export function getDefaultNickNames(): string[] {
 }
 
 export function getParticipantsData(): IParticipant[] {
-  return PARTICIPANTTS_DATA;
+  return PARTICIPANTS_DATA;
 }
 
 export function getWeekByWeekAwardWinner(): ILeaderDashboardPage {
@@ -18,15 +19,15 @@ export function getWeekByWeekAwardWinner(): ILeaderDashboardPage {
     result[i] = getDefaultLeaderDashboardWeekMetric();
   }
 
-  getParticipantsData().forEach((particpantData) => {
-    Object.keys(particpantData.weekStats).forEach((weekNo) => {
-      const particpantWeekTotalSteps: number = particpantData.weekStats[
+  getParticipantsData().forEach((participantData) => {
+    Object.keys(participantData.weekStats).forEach((weekNo) => {
+      const participantWeekTotalSteps: number = participantData.weekStats[
         Number(weekNo)
       ].steps.reduce((acc, daySteps) => acc + daySteps);
 
-      if (result[weekNo].steps < particpantWeekTotalSteps) {
-        result[weekNo].steps = particpantWeekTotalSteps;
-        result[weekNo].name = particpantData.nickname;
+      if (result[weekNo].steps < participantWeekTotalSteps) {
+        result[weekNo].steps = participantWeekTotalSteps;
+        result[weekNo].name = participantData.nickname;
       }
     });
   });
@@ -77,4 +78,49 @@ export function getHighestWeeklyAwardWinner(
   }
 
   return "";
+}
+
+export function getWeekLabels(): string[] {
+  const weekLabels: string[] = [];
+
+  for (let i = 1; i < 15; i++) {
+    weekLabels.push(`Week ${i}`);
+  }
+
+  return weekLabels;
+}
+
+export function geTotalStepsWeekByWeek(
+  participantNickname?: string
+): LineChartDataset[] {
+  const datasets: LineChartDataset[] = [];
+
+  let data = getParticipantsData().filter(
+    (participant) => participant.nickname === participantNickname
+  );
+
+  data = data.length ? data : getParticipantsData();
+
+  data.forEach((participant) => {
+    const data: number[] = [];
+
+    Object.keys(participant.weekStats).forEach((weekNo) => {
+      const weekTotalSteps: number = participant.weekStats[
+        Number(weekNo)
+      ].steps.reduce((acc, daySteps) => acc + daySteps);
+
+      data.push(weekTotalSteps);
+    });
+
+    datasets.push({
+      label: participant.nickname,
+      data,
+      fill: false,
+      borderColor: participant.colorCode,
+      tension: 0.1,
+      borderWidth: 1,
+    });
+  });
+
+  return datasets;
 }

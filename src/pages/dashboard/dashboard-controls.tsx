@@ -29,8 +29,8 @@ export const DashboardControls = () => {
 
   return (
     <div id="dashboard-controls">
-      <label htmlFor="weeks" className="m-[1rem]">
-        <b>Select Week:</b>{" "}
+      <label htmlFor="weeks" className="m-[1rem] control">
+        Select Week:{" "}
       </label>
       <select id="weeks-selection" onChange={handleSelectedWeek}>
         {mapOverRange(startWeekNo, endWeekNo, (optionVal) => (

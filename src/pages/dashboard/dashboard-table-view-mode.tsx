@@ -9,10 +9,10 @@ export const DashboardTableViewMode = () => {
   return (
     <>
       <div id="dashboard-table-container">
-        <span>
+        <label>
           <b> {formatDateToHumanReadable(weekStartDate)}</b> to{" "}
           <b>{formatDateToHumanReadable(weekEndDate)}</b>
-        </span>
+        </label>
         <DashboardTable
           dashboardScreenData={dashboardScreenData}
           weekStartDate={weekStartDate}

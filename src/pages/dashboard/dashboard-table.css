@@ -1,34 +1,33 @@
-
 #participants-table {
-    margin-top: 1rem;
-    padding: 0.2rem;
+  margin-top: 1rem;
+  padding: 0.2rem;
 }
 
-table, th, td {
-    border: 1px solid gray;
-    width: 100%;
+table,
+th,
+td {
+  border: 1px solid #ccc;
+  width: 100%;
+  color: darkgoldenrod;
 }
 
-th, td {
-    width: 5rem;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-button {
-    padding: 0 0.5rem !important;
-    background-color: white;
-    border: 1px solid black;
+th,
+td {
+  width: 5rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 #go-to-crnt-week {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 #week-navigation-buttons {
-    display: flex;
+  margin-left: 1rem;
+  display: flex;
 }
 
 #dashboard-controls {
-    display: flex
+  display: flex;
+  align-items: center;
 }

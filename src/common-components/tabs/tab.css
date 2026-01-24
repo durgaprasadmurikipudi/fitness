@@ -1,19 +1,19 @@
 #tab {
-    padding: 0.4rem;
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
-    border-bottom: 0;
+  padding: 0.4rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom: 0;
 }
 
 #tab.selected-tab {
-    color: white;
-    border: 1px solid orange;
-    background-color: orange;
-    font-weight: bold;
+  color: white;
+  border: 1px solid orange;
+  background-color: orange;
+  font-weight: bold;
 }
 
 #tab.not-selected {
-    color: black;
-    background-color: white;
-    border: 1px solid orange;
+  color: orange;
+  background-color: white;
+  border: 1px solid orange;
 }

@@ -1,7 +1,7 @@
 import { Dashboard } from "../pages/Dashboard/dashboard.tsx";
 import { LeadershipDashboard } from "../pages/LeadershipDashboardPage/leadership-dashboard-page.tsx";
+import { ParticipantsDashboardPage } from "../pages/ParticipantsDashboardPage/participants-dashboard-page.tsx";
 import type { ITab } from "../types/container-page";
-import { DefaultComponent } from "../utils/common-utils.tsx";
 
 export const LEADERSHIP_DASHBOARD_TAB_NAME = "Leadership Dashboard";
 export const DASHBOARD_TAB_NAME = "Weekly Stats Dashboard";
@@ -12,7 +12,10 @@ export const LEADERSHIP_DASHBOARD_TAB = {
   name: LEADERSHIP_DASHBOARD_TAB_NAME,
   component: LeadershipDashboard,
 };
-export const STATS_TAB = { name: STATS_TAB_NAME, component: DefaultComponent };
+export const STATS_TAB = {
+  name: STATS_TAB_NAME,
+  component: ParticipantsDashboardPage,
+};
 
 export const tabs: ITab[] = [
   DASHBOARD_TAB,

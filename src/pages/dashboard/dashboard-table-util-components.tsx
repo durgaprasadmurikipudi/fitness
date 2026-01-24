@@ -53,8 +53,9 @@ export const TotalStepsRow = (props: ITotalStepsRowProps) => {
 
         return (
           <HighlightTableCell
+            key={nickName}
             data={totalSteps?.toString()}
-            shouldHightlight={isWinnerStepsCount}
+            shouldHighlight={isWinnerStepsCount}
             nickname={nickName}
             index={i}
           />
@@ -97,8 +98,9 @@ export const HighestStepsRow = (props: IHighestStepsRowProps) => {
 
         return (
           <HighlightTableCell
+            key={nickName}
             data={participantHighestStepsForTheWeek?.toString()}
-            shouldHightlight={ishighestStepsCountWinner}
+            shouldHighlight={ishighestStepsCountWinner}
             nickname={nickName}
             index={i}
           />
@@ -109,16 +111,16 @@ export const HighestStepsRow = (props: IHighestStepsRowProps) => {
 };
 
 const HighlightTableCell = (props: IHighlightedTableCellProps) => {
-  const { nickname, index, data, shouldHightlight } = props;
+  const { nickname, index, data, shouldHighlight } = props;
   return (
     <td
       key={nickname + index}
       style={{
-        color: shouldHightlight ? "green" : "black",
+        color: shouldHighlight ? "green" : "",
       }}
     >
       <b>
-        {shouldHightlight ? "🤩" : ""} {data} {shouldHightlight ? "🤩" : ""}
+        {shouldHighlight ? "🤩" : ""} {data} {shouldHighlight ? "🤩" : ""}
       </b>
     </td>
   );

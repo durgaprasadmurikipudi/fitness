@@ -1,26 +1,21 @@
 #dashboard {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 #dashboard-container {
-    border: 1px solid orange;
-    padding: 0 2rem;
+  border: 1px solid orange;
+  padding: 0 2rem;
 }
 
 #dashboard-controls {
-    border-bottom: 2px solid gray;
-    padding-bottom: 0.5rem;
-    margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 #weeks-selection {
-    margin: 0 5rem;
-    padding: 0;
-    width: 8rem;
-    border: 1px solid black;
-    background-color: white;
+  border: 1px solid #ccc;
 }
 
 #dashboard-table-container {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }

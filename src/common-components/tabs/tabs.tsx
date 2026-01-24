@@ -12,9 +12,10 @@ export const Tabs = (props: IProps) => {
   return (
     <div id="tabs">
       {props.tabs.map((tab) => (
-        <div onClick={() => props.setSelectedTab(tab)}>
+        <div key={`div-${tab.name}`} onClick={() => props.setSelectedTab(tab)}>
           <TabComponent
             tab={tab}
+            key={tab.name}
             isSelected={tab.name === props.selectedTab.name}
           />
         </div>

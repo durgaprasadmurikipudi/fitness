@@ -24,7 +24,7 @@ export interface IDashboardTableProps {
 export interface IHighlightedTableCellProps {
   nickname: string;
   index: number;
-  shouldHightlight: boolean;
+  shouldHighlight: boolean;
   data: string;
 }
 
