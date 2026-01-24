@@ -19,12 +19,11 @@ import type {
   BarChartDataset,
   LineChartDataset,
 } from "../../types/common-components/chart";
-import { use, useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
   forEachOverRange,
   formatToDateString,
   getStartDateForWeekNo,
-  mapOverRange,
 } from "../../utils";
 
 Chart.register(
