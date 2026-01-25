@@ -1,4 +1,8 @@
-import { PARTICIPANT_NICK_NAMES, PARTICIPANTS_DATA } from "../constants";
+import {
+  END_WEEK_NO,
+  PARTICIPANT_NICK_NAMES,
+  PARTICIPANTS_DATA,
+} from "../constants";
 import { getDefaultLeaderDashboardWeekMetric } from "../constants/leader-dashboard-page";
 import type { IParticipant } from "../types";
 import type { LineChartDataset } from "../types/common-components/chart";
@@ -15,7 +19,7 @@ export function getParticipantsData(): IParticipant[] {
 export function getWeekByWeekAwardWinner(): ILeaderDashboardPage {
   let result: ILeaderDashboardPage = {};
 
-  for (let i = 1; i < 15; i++) {
+  for (let i = 1; i <= END_WEEK_NO; i++) {
     result[i] = getDefaultLeaderDashboardWeekMetric();
   }
 
@@ -83,7 +87,7 @@ export function getHighestWeeklyAwardWinner(
 export function getWeekLabels(): string[] {
   const weekLabels: string[] = [];
 
-  for (let i = 1; i < 15; i++) {
+  for (let i = 1; i <= END_WEEK_NO; i++) {
     weekLabels.push(`Week ${i}`);
   }
 

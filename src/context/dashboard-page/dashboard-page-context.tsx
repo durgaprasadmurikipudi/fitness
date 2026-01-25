@@ -11,7 +11,7 @@ import {
 } from "react";
 import type { IDashboardScreenData } from "../../types";
 import { getParticipantsDataForWeek } from "../../services/dashboard";
-import { PARTICIPANTS_DATA } from "../../constants";
+import { END_WEEK_NO, PARTICIPANTS_DATA } from "../../constants";
 import { getEndDateForWeekNo, getStartDateForWeekNo } from "../../utils";
 
 interface IDashboardPageContext {
@@ -29,7 +29,7 @@ const dashboardScreenData = getParticipantsDataForWeek(PARTICIPANTS_DATA, 1);
 
 const defaultIDashboardPageContext: IDashboardPageContext = {
   startWeekNo: 1,
-  endWeekNo: 14,
+  endWeekNo: END_WEEK_NO,
   selectedWeek: 1,
   weekStartDate: new Date(),
   weekEndDate: new Date(),
