@@ -199,7 +199,10 @@ export const PARTICPANT_MAK: IParticipant = {
       weekNo: 11,
       steps: formatWeekData(4908, 5875, 9849, 7215, 4895, 4885, 4504),
     },
-    12: { weekNo: 12, steps: formatWeekData() },
+    12: {
+      weekNo: 12,
+      steps: formatWeekData(7307, 4629, 6438, 6019, 6675, 5790, 8981),
+    },
   },
 };
 
