@@ -12,7 +12,9 @@ export const DashboardControls = () => {
   } = useDashboardPageContext();
 
   const onGoToCurrentWeekClick = useCallback(() => {
-    setSelectedWeek(getCurrentWeek());
+    let crntWeekNo = getCurrentWeek();
+    crntWeekNo = crntWeekNo > endWeekNo ? endWeekNo : crntWeekNo;
+    setSelectedWeek(crntWeekNo);
   }, []);
 
   const onGoToPreviousWeekClick = useCallback(() => {

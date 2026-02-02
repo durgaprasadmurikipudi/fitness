@@ -64,7 +64,10 @@ export const PARTICPANT_VK: IParticipant = {
       weekNo: 11,
       steps: formatWeekData(5660, 5602, 9438, 8930, 11545, 5460, 6459),
     },
-    12: { weekNo: 12, steps: formatWeekData() },
+    12: {
+      weekNo: 12,
+      steps: formatWeekData(15242, 11867, 4528, 4209, 7681, 5393, 8965),
+    },
   },
 };
 
@@ -141,9 +144,12 @@ export const PARTICPANT_ASH: IParticipant = {
     },
     11: {
       weekNo: 11,
-      steps: formatWeekData(7821, 6140, 8969, 10358, 7561, 7808),
+      steps: formatWeekData(7821, 6140, 8969, 10358, 7561, 7808, 9506),
     },
-    12: { weekNo: 12, steps: formatWeekData() },
+    12: {
+      weekNo: 12,
+      steps: formatWeekData(4838, 5204, 7570, 6374, 3289, 6979, 3812),
+    },
   },
 };
 
@@ -246,7 +252,10 @@ export const PARTICPANT_DP: IParticipant = {
       weekNo: 11,
       steps: formatWeekData(7428, 14302, 16077, 9634, 4283, 8491, 11977),
     },
-    12: { weekNo: 12, steps: formatWeekData() },
+    12: {
+      weekNo: 12,
+      steps: formatWeekData(9806, 4059, 7457, 7961, 9914, 11703, 8070),
+    },
   },
 };
 
